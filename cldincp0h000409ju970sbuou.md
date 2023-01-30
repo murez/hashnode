@@ -6,7 +6,7 @@ This paper presents an algorithm to determinate a global state of a distributed 
 
 ## Paper Details
 
-This paper assumes that a distributed system is consisted of a series of processes and directed channels which can construct a DAG where processes are vertices and channels are edges. And each process can compute, send/receive messages and record state by itself. So the state on the process can be presented as a tuple $e = &lt;p, s, s', M ,c&gt;$ where $p$ is the process, $s$ is the state of $p$ before $e$ and $s'$ is the state of $p$ after $e$, $M$ is the delivered message and $c$ is the channel to communicate. And each channel is error-free, has a infinity sending and receiving buffer and messages is ordered.
+This paper assumes that a distributed system is consisted of a series of processes and directed channels which can construct a DAG where processes are vertices and channels are edges. And each process can compute, send/receive messages and record state by itself. So the state on the process can be presented as a tuple \\(e = &lt;p, s, s', M ,c&gt;\\) where \\(p\\) is the process, \\(s\\) is the state of $p$ before $e$ and $s'$ is the state of $p$ after $e$, $M$ is the delivered message and $c$ is the channel to communicate. And each channel is error-free, has a infinity sending and receiving buffer and messages is ordered.
 
 And the minimized system is shown below.
 
@@ -14,11 +14,11 @@ So when a message is delivered, we have four status:
 
 1. Message in \\(p\\)
     
-2. Message in $c$
+2. Message in \\(c\\)
     
-3. Message in $c'$
+3. Message in \\(c'\\)
     
-4. Message in $q$
+4. Message in \\(q\\)
     
 
 The errors can happens every where but we cannot determinate where it happens, so the paper introduce an algorithm to snapshot the system.
