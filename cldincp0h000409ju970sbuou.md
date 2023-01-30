@@ -6,7 +6,7 @@ This paper presents an algorithm to determinate a global state of a distributed 
 
 ## Paper Details
 
-This paper assumes that a distributed system is consisted of a series of processes and directed channels which can construct a DAG where processes are vertices and channels are edges. And each process can compute, send/receive messages and record state by itself. So the state on the process can be presented as a tuple \\(e = &lt;p, s, s', M ,c&gt;\\) where \\(p\\) is the process, \\(s\\) is the state of $p$ before $e$ and $s'$ is the state of $p$ after $e$, $M$ is the delivered message and $c$ is the channel to communicate. And each channel is error-free, has a infinity sending and receiving buffer and messages is ordered.
+This paper assumes that a distributed system is consisted of a series of processes and directed channels which can construct a DAG where processes are vertices and channels are edges. And each process can compute, send/receive messages and record state by itself. So the state on the process can be presented as a tuple \\(e = &lt;p, s, s', M ,c&gt;\\) where \\(p\\) is the process, \\(s\\) is the state of \\(p\\) before \\(e\\) and \\(s'\\) is the state of \\(p\\) after \\(e\\), \\(M\\) is the delivered message and \\(c\\) is the channel to communicate. And each channel is error-free, has a infinity sending and receiving buffer and messages is ordered.
 
 And the minimized system is shown below.
 
@@ -27,15 +27,15 @@ The errors can happens every where but we cannot determinate where it happens, s
 
 This paper introduce the following algorithm to take a snapshot of the whole system:
 
-#### for Sender $P$
+#### for Sender \\(P\\)
 
-$P$ keeps track of its state (computational result or system attributes) and sends a marker to each channel.
+\\(P\\) keeps track of its state (computational result or system attributes) and sends a marker to each channel.
 
-#### for Receiver $Q$
+#### for Receiver \\(Q\\)
 
-1. If $Q$'s state hasn't been recorded, record it and set channel $c$'s state to null.
+1. If \\(Q\\)'s state hasn't been recorded, record it and set channel \\(c\\)'s state to null.
     
-2. If $Q$'s state has been recorded, then from the first message $Q$ received to the marker, $Q$ set channel $c$'s state messages.
+2. If \\(Q\\)'s state has been recorded, then from the first message \\(Q\\) received to the marker, \\(Q\\) set channel \\(c\\)'s state messages.
     
 
 ## Strong Points
